@@ -31,6 +31,7 @@ public class SetAttribute extends HttpServlet {
 		String reqMesg = "request에 바인딩됩니다.";
 
 		ServletContext ctx = getServletContext();
+		
 		HttpSession session = request.getSession();
 		ctx.setAttribute("context", ctxMesg);
 		session.setAttribute("session", sesMesg);
