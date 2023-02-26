@@ -4,6 +4,7 @@
 <%
   request.setCharacterEncoding("UTF-8");
 %>    
+
 <jsp:useBean  id="m1" class="sec01.ex01.MemberBean"/>
 <jsp:setProperty name="m1" property="*"  />
 <jsp:useBean  id="membersList" class="java.util.ArrayList" />
