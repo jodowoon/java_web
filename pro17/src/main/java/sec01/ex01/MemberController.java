@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MemberController
  */
-@WebServlet("/mem.do")
+//@WebServlet("/mem.do")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	MemberDAO memberDAO;
@@ -43,9 +43,9 @@ public class MemberController extends HttpServlet {
 
 	private void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8"); //응답된 값을 한글로 해석
 		List<MemberVO> membersList = memberDAO.listMembers();
-		System.out.println("123321"+membersList);
+		System.out.println(membersList);
 		request.setAttribute("membersList", membersList);
 		RequestDispatcher dispatch = request.getRequestDispatcher("/listMembers.jsp");
 		dispatch.forward(request, response);  // 표시하고자 하는 jsp 파일로 포워딩 합니다. 

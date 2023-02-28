@@ -65,12 +65,12 @@ public class MemberDAO {
 			String email = m.getEmail();
 			String query = "INSERT INTO t_member(id, pwd, name, email)" + " VALUES(?, ? ,? ,?)";
 			System.out.println(query);
-			pstmt = conn.prepareStatement(query);
+			pstmt = conn.prepareStatement(query); //db에 연결된  sql문을 전달
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
 			pstmt.setString(3, name);
 			pstmt.setString(4, email);
-			pstmt.executeUpdate();
+			pstmt.executeUpdate();  // sql문 실행 
 			pstmt.close();
 			conn.close();
 		} catch (SQLException e) {

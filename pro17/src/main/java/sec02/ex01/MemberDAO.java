@@ -30,11 +30,11 @@ public class MemberDAO {
 	public List<MemberVO> listMembers() {
 		List<MemberVO>  membersList = new ArrayList();
 		try {
-			conn = dataFactory.getConnection();
-			String query = "select * from  t_member order by joinDate desc";
+			conn = dataFactory.getConnection(); //데이터 베이스 연결 
+			String query = "select * from  t_member order by joinDate desc"; //명령어 저장 
 			System.out.println(query);
-			pstmt = conn.prepareStatement(query);
-			ResultSet rs = pstmt.executeQuery();
+			pstmt = conn.prepareStatement(query);//db 명령어를 db에 적용 
+			ResultSet rs = pstmt.executeQuery(); //
 			while (rs.next()) {
 				String id = rs.getString("id");
 				String pwd = rs.getString("pwd");
